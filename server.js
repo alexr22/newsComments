@@ -6,7 +6,7 @@ var exphbs = require('express-handlebars')
 var request = require('request'); // Snatches html from urls
 var cheerio = require('cheerio'); // Scrapes our html
 var mongoose = require('mongoose');
-
+var PORT = process.env.PORT || 3000;
 
 // use morgan and bodyparser with our app
 app.use(logger('dev'));
@@ -154,7 +154,7 @@ app.get('/articles', function(req, res){
 		});
 });
 
-app.listen(3000, function() {
+app.listen(PORT, function() {
   console.log('App running on port 3000!');
 });
 
